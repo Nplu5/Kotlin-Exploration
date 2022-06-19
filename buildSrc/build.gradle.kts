@@ -14,9 +14,11 @@ plugins{
 
 repositories {
     gradlePluginPortal()
+    mavenCentral()
 }
 
 dependencies {
-    val kotlinVersion = props.getProperty("kotlinVersion")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+   val kotlinVersion = props.getProperty("kotlinVersion")
+
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
 }

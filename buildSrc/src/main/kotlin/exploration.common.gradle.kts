@@ -7,9 +7,9 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+    implementation(CommonDependencies.kotlinStdLib)
+    testImplementation(CommonDependencies.junitApi)
+    testRuntimeOnly(CommonDependencies.junitEngine)
 }
 
 tasks {
@@ -19,5 +19,9 @@ tasks {
     }
     jacocoTestReport {
         dependsOn(tasks.test)
+        reports {
+            xml.required.set(false)
+            csv.required.set(false)
+        }
     }
 }
