@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins{
     kotlin("jvm")
     jacoco
@@ -12,11 +14,20 @@ dependencies {
     testRuntimeOnly(CommonDependencies.junitEngine)
 }
 
+group = "org.skrause"
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions{
+        jvmTarget = "11"
+    }
+}
+
 tasks {
     test {
         useJUnitPlatform()
         finalizedBy(tasks.jacocoTestReport)
     }
+
     jacocoTestReport {
         dependsOn(tasks.test)
         reports {

@@ -18,7 +18,14 @@ repositories {
 }
 
 dependencies {
-   val kotlinVersion = props.getProperty("kotlinVersion")
+    val kotlinVersion = props.getProperty("kotlinVersion")
+    val quarkusVersion = props.getProperty("quarkusVersion")
+    implementation("io.quarkus:gradle-application-plugin:$quarkusVersion")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+}
 
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions{
+        jvmTarget = "11"
+    }
 }
