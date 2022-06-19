@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Test
-import org.skrause.returnAString
+import org.skrause.returnString
 
 class AppTest {
     @Test
     fun checkIfPlaygroundIsWorking(){
         // Act
-        val sut = returnAString()
+        val sut = returnString()
 
         // Assert
         assert(sut.contains("working"))

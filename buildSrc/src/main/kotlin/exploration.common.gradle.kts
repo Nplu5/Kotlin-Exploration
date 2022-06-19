@@ -1,11 +1,10 @@
 plugins{
     kotlin("jvm")
+    jacoco
 }
 repositories {
     mavenCentral()
 }
-
-group "org.skrause"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
@@ -16,5 +15,9 @@ dependencies {
 tasks {
     test {
         useJUnitPlatform()
+        finalizedBy(tasks.jacocoTestReport)
+    }
+    jacocoTestReport {
+        dependsOn(tasks.test)
     }
 }

@@ -1,9 +1,9 @@
 package org.skrause
 
 fun main() {
-    println("Hello, world!")
+    println(returnString())
 }
 
-fun returnAString(): String {
+fun returnString(): String {
     return "Playground working successfully"
 }
