@@ -7,6 +7,7 @@ FileInputStream(file("../gradle.properties")).use {
     props.load(it)
 }
 
+group = "org.skrause"
 
 plugins{
     `kotlin-dsl`

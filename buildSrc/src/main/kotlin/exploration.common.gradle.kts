@@ -31,8 +31,8 @@ tasks {
     jacocoTestReport {
         dependsOn(tasks.test)
         reports {
-            xml.required.set(false)
-            csv.required.set(false)
+            xml.required.set(true)
+            csv.required.set(true)
         }
     }
 }
